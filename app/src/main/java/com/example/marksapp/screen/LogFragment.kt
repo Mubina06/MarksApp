@@ -1,20 +1,23 @@
-package com.example.marksapp
+package com.example.marksapp.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.marksapp.databinding.FragmentLogBinding
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class StudentFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class LogFragment : Fragment() {
+
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding: FragmentLogBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +31,25 @@ class StudentFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentLogBinding.inflate(inflater, container, false)
 
-        return inflater.inflate(R.layout.fragment_student, container, false)
+        binding.button.setOnClickListener {
+            if ( binding.flPassword != null  && binding.flLogin != null){
+
+            } else{
+                Toast.makeText(context, "Password or Login", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+        return binding.root
     }
 
     companion object {
 
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            StudentFragment().apply {
+            LogFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -1,4 +1,4 @@
-package com.example.marksapp
+package com.example.marksapp.screen
 
 import android.os.Bundle
 import android.os.PersistableBundle
