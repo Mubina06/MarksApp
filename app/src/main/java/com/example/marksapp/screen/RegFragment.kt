@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.marksapp.R
+import com.example.marksapp.database.AppDatabase
+import com.example.marksapp.databinding.FragmentRegBinding
+import com.example.marksapp.entity.User
 
 
 private const val ARG_PARAM1 = "param1"
@@ -24,12 +29,30 @@ class RegFragment : Fragment() {
         }
     }
 
+    val appDataBase: AppDatabase by lazy{
+        AppDatabase.getInstance(requireContext())
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_reg, container, false)
+        var binding = FragmentRegBinding.inflate(inflater,container, false)
+
+        binding.button.setOnClickListener {
+            appDataBase.getUserDao().addUser(
+                User(
+                    user_name = binding.frrName.text.toString(),
+                    user_login = binding.frrLog.text.toString(),
+                    user_password = binding.frrPassword.text.toString(),
+                    role = binding.frrRole.text.toString()
+                )
+            )
+            findNavController().navigate(R.id.action_regFragment_to_logFragment)
+        }
+        return binding.root
+
     }
 
     companion object {

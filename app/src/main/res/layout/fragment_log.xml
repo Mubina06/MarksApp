@@ -38,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fll_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -62,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fl_login">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fll_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -38,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/frr_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -62,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fr_name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/frr_log"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -86,6 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fr_log">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/frr_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -93,38 +96,38 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fr_role"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Role"
+        app:boxStrokeColor="#28399A"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="@+id/fr_password"
+        app:layout_constraintStart_toStartOf="@+id/fr_password"
+        app:layout_constraintTop_toBottomOf="@+id/fr_password"
+        app:startIconCheckable="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/frr_role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="52dp"
         android:backgroundTint="#673AB7"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/student"
-        app:layout_constraintStart_toStartOf="@+id/teacher"
-        app:layout_constraintTop_toBottomOf="@+id/student" />
-
-    <CheckBox
-        android:id="@+id/teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:text="Teacher"
-        app:layout_constraintEnd_toStartOf="@+id/student"
-        app:layout_constraintHorizontal_bias="0.33"
-        app:layout_constraintStart_toStartOf="@+id/fr_password"
-        app:layout_constraintTop_toBottomOf="@+id/fr_password" />
-
-    <CheckBox
-        android:id="@+id/student"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="72dp"
-        android:text="Student"
-        app:layout_constraintEnd_toEndOf="@+id/fr_password"
-        app:layout_constraintTop_toBottomOf="@+id/fr_password" />
+        android:text="sign up"
+        app:layout_constraintEnd_toEndOf="@+id/rolebox"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="@+id/rolebox"
+        app:layout_constraintTop_toBottomOf="@+id/rolebox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

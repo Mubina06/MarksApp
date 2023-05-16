@@ -15,6 +15,7 @@ abstract class AppDatabase: RoomDatabase() {
     abstract fun getUserDao():UserDao
     abstract fun SubjectDao():SubjectDao
 
+
     companion object{
         var instanse: AppDatabase? = null
 
