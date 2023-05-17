@@ -7,16 +7,22 @@
 
     <fragment
         android:id="@+id/logFragment"
-        android:name="com.example.myapplication.LogFragment"
+        android:name="com.example.marksapp.screen.LogFragment"
         android:label="fragment_log"
         tools:layout="@layout/fragment_log" >
         <action
             android:id="@+id/action_logFragment_to_regFragment"
             app:destination="@id/regFragment" />
+        <action
+            android:id="@+id/action_logFragment_to_teacherFragment"
+            app:destination="@id/teacherFragment" />
+        <action
+            android:id="@+id/action_logFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
     </fragment>
     <fragment
         android:id="@+id/regFragment"
-        android:name="com.example.myapplication.RegFragment"
+        android:name="com.example.marksapp.screen.RegFragment"
         android:label="fragment_reg"
         tools:layout="@layout/fragment_reg" >
         <action
@@ -31,12 +37,12 @@
     </fragment>
     <fragment
         android:id="@+id/studentFragment"
-        android:name="com.example.myapplication.StudentFragment"
+        android:name="com.example.marksapp.screen.StudentFragment"
         android:label="fragment_student"
         tools:layout="@layout/fragment_student" />
     <fragment
         android:id="@+id/teacherFragment"
-        android:name="com.example.myapplication.TeacherFragment"
+        android:name="com.example.marksapp.screen.TeacherFragment"
         android:label="fragment_teacher"
         tools:layout="@layout/fragment_teacher" />
 </navigation>

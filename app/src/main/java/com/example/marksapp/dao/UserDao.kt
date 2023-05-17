@@ -8,7 +8,7 @@ import com.example.marksapp.entity.User
 
 @Dao
 interface UserDao {
-    @Query("select * from users")
+    @Query("select * from User")
     fun getAllUsers(): List<User>
 
     @Insert
@@ -18,13 +18,14 @@ interface UserDao {
     fun deleteUser(user: User)
 
     @Query(
-        "select * from users where user_id = :id"
+        "select * from User where user_id = :id"
     )
     fun getUsersById(id: Int):User
 
     @Query(
-        "select * from users where login = :login AND password = :password"
+        "select * from User where user_login = :user_login AND user_password = :user_password"
     )
-    fun getUser(login: String, password: String): User
+
+    fun getUser(user_login: String, user_password: String): User
 
 }

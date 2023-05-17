@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.marksapp.R
 import com.example.marksapp.database.AppDatabase
@@ -42,19 +41,24 @@ class LogFragment : Fragment() {
     ): View? {
         binding = FragmentLogBinding.inflate(inflater, container, false)
 
+        binding.textView2.setOnClickListener {
+            findNavController().navigate(R.id.action_logFragment_to_regFragment)
+        }
+
         binding.button.setOnClickListener {
             var login = binding.fllLogin.text.toString()
             var password = binding.fllPassword.text.toString()
+
             var user: User
             if(login != "" && password != ""){
                 user = appDatabase.getUserDao().getUser(login,password)
                 Log.d("AAA", user.user_login)
-                if(user.role.toLowerCase().equals("student")){
-                    findNavController().navigate(R.id.action_regFragment_to_studentFragment)
+                if(user.role.toLowerCase() == "student"){
+                    findNavController().navigate(R.id.action_logFragment_to_studentFragment)
                 }
 
-                if(user.role.toLowerCase().equals("teacher")){
-                    findNavController().navigate(R.id.action_regFragment_to_teacherFragment)
+                if(user.role.toLowerCase() == "teacher"){
+                    findNavController().navigate(R.id.action_logFragment_to_teacherFragment)
                 }
             }
 

@@ -18,7 +18,7 @@ interface SubjectDao {
     @Query("select * from Subject")
     fun getAllSubject():List<Subject>
 
-    @Query("select * from Subject where id = : id")
-    fun getSubjectById(id:Int): Subject
+    @Query("select * from Subject where subject_id = :subject_id")
+    fun getSubjectById(subject_id:Int): Subject
 
 }
